@@ -1,0 +1,12 @@
+{
+    "name": "Authia",
+    "email": {
+        "address": "XXXXX@XXXXX.XXX",
+        "host": "mail.XXXXX.XXX",
+        "port": 587,
+        "secure": false
+    },
+    "SMS": {
+        "sender": "XXXXXXXXXXXX"
+    }
+}
