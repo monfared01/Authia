@@ -13,7 +13,7 @@ emails and phone numbers are verified by regular form of verification in these k
 First of all you should [config](https://github.com/monfared01/Authia/wiki/Configuration) Authia with our documentations in this repository [wiki](https://github.com/monfared01/Authia/wiki/) then you can use our [Postman document](https://github.com/monfared01/Authia/blob/main/Authia.postman_collection.json) or [this doc](https://github.com/monfared01/Authia/wiki/Authia-http-document) for understand forms of Authia http requests.
 
 ## Development Technologies
-* NodeJS with Express
+* Node.js with Express.js
 * MongoDB with Mongoose
 
 ## Api architecture
