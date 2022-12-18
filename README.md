@@ -7,6 +7,7 @@ In Authia users can **sign up**,**sign in**, **recover their accounts** and cont
 * Email
 * Phone number
 * Password
+
 emails and phone numbers are verified by regular form of verification in these kind of systems.
 
 ## Documentation
