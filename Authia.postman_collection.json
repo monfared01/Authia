@@ -1,0 +1,3032 @@
+{
+	"info": {
+		"_postman_id": "5e6fa8aa-08aa-4705-a5a1-da49eedeb9d9",
+		"name": "Authia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Verification",
+			"item": [
+				{
+					"name": "Request for signup with email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"example@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/verification/email/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"verification",
+								"email",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Valid email as input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"example@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/verification/email/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"verification",
+										"email",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-G9tSii0RUypB/dZDTgZntph0Das\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 17:12:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"privateKey\": \"93106\",\n    \"publicKey\": \"V0CxPON5Vd3E1kkQFXiGWN9i1bnTsCN3W1IgwTdNLZhbiowO86\"\n}"
+						},
+						{
+							"name": "Invalid email as input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"example@.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/verification/email/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"verification",
+										"email",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "411"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19b-Ptx0TeF7LW/jUEKKJZFwnsAcCzs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 17:38:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"email\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"Please fill a valid email address\",\n            \"properties\": {\n                \"message\": \"Please fill a valid email address\",\n                \"type\": \"user defined\",\n                \"path\": \"email\",\n                \"value\": \"example@.com\"\n            },\n            \"kind\": \"user defined\",\n            \"path\": \"email\",\n            \"value\": \"example@.com\"\n        }\n    },\n    \"_message\": \"code validation failed\",\n    \"name\": \"ValidationError\",\n    \"message\": \"code validation failed: email: Please fill a valid email address\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Request for signup with phone number",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobile\" : \"09155896347\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/verification/phone/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"verification",
+								"phone",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Valid phone number as input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mobile\" : \"09155896347\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/verification/phone/signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"verification",
+										"phone",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-wLQWal5R7tDZrbWDFS0FJDlJbmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 17:36:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"privateKey\": \"10306\",\n    \"publicKey\": \"7UnqgggikrGonohjwPKcowu1ngSmj1juYwiOU7I2OLLdphdKrt\"\n}"
+						},
+						{
+							"name": "Invalid phone number for signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mobile\" : \"0155896347\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/verification/phone/signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"verification",
+										"phone",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "408"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"198-suFEbDelnY/Vi3IwodsAL8kiBsk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 17:59:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"mobile\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"Please fill a valid phone number\",\n            \"properties\": {\n                \"message\": \"Please fill a valid phone number\",\n                \"type\": \"user defined\",\n                \"path\": \"mobile\",\n                \"value\": \"0155896347\"\n            },\n            \"kind\": \"user defined\",\n            \"path\": \"mobile\",\n            \"value\": \"0155896347\"\n        }\n    },\n    \"_message\": \"code validation failed\",\n    \"name\": \"ValidationError\",\n    \"message\": \"code validation failed: mobile: Please fill a valid phone number\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Request for user recovery with phone number",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobile\" : \"09125588999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/verification/phone/recovery",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"verification",
+								"phone",
+								"recovery"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mobile\" : \"09300645819\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/verification/phone/recovery",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"verification",
+										"phone",
+										"recovery"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 18:59:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Valid user phone number",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mobile\" : \"09125588999\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/verification/phone/recovery",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"verification",
+										"phone",
+										"recovery"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-tIaveARVXEeNbrOsGVTUggpdRPo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 19:00:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"privateKey\": \"71844\",\n    \"publicKey\": \"dvPaBbrM5Sk0hiL1GQta2FaRnOv9xCH1L1sGkfqHBh21a9P2nH\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Request for user recovery with email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"mivode6226@gruppies.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/verification/email/recovery",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"verification",
+								"email",
+								"recovery"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"ppp@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/verification/email/recovery",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"verification",
+										"email",
+										"recovery"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 19:04:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Valid user email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"mivode6226@gruppies.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/verification/email/recovery",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"verification",
+										"email",
+										"recovery"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-iyQaklsI1L1O5gIudEuVL4AjYjA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 19:04:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"privateKey\": \"31518\",\n    \"publicKey\": \"SKGNnwDPcw6GW0u3HYUPMII87WLCRaukbIRcrM1wzJ2rTV0r6l\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Request for changing email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"mivode6226@gruppies.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/verification/email",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"verification",
+								"email"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Valid email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "xAuth",
+										"value": "{{code}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"mivode6226@gruppies.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/verification/email",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"verification",
+										"email"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-D/yf75jlwEWeLsNBeK9FaDlfUG8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 18:45:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"privateKey\": \"09752\",\n    \"publicKey\": \"bFa6TywbJHliYd3DNZcb7mrSy4i1wjbqXQ54mXPUd293h2u7Yl\"\n}"
+						},
+						{
+							"name": "Invalid email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "xAuth",
+										"value": "{{code}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"mivode6226@gruppies.\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/verification/email",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"verification",
+										"email"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "427"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ab-wI5acVxloqGkCiv0sfbsAat2u+A\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 18:46:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"email\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"Please fill a valid email address\",\n            \"properties\": {\n                \"message\": \"Please fill a valid email address\",\n                \"type\": \"user defined\",\n                \"path\": \"email\",\n                \"value\": \"mivode6226@gruppies.\"\n            },\n            \"kind\": \"user defined\",\n            \"path\": \"email\",\n            \"value\": \"mivode6226@gruppies.\"\n        }\n    },\n    \"_message\": \"code validation failed\",\n    \"name\": \"ValidationError\",\n    \"message\": \"code validation failed: email: Please fill a valid email address\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Request for changing phone number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobile\" : \"09125588999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/verification/phone",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"verification",
+								"phone"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Valid phone number",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "xAuth",
+										"value": "{{code}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mobile\" : \"09125588999\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/verification/phone",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"verification",
+										"phone"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-cfqs3aZ6gWPjjLp6pdhu0wNOJws\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 18:25:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"privateKey\": \"77655\",\n    \"publicKey\": \"tC2qxDv8jejMNGKTd7AoRtxwRLn1ZQ3ZMjq7HxTRual2fLhfR8\"\n}"
+						},
+						{
+							"name": "Invalid phone number",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "xAuth",
+										"value": "{{code}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mobile\" : \"9125588999\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/verification/phone",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"verification",
+										"phone"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "408"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"198-C9E+pNPI+YYvpmjg6+ZqO2Ojct8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Dec 2022 18:26:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"mobile\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"Please fill a valid phone number\",\n            \"properties\": {\n                \"message\": \"Please fill a valid phone number\",\n                \"type\": \"user defined\",\n                \"path\": \"mobile\",\n                \"value\": \"9125588999\"\n            },\n            \"kind\": \"user defined\",\n            \"path\": \"mobile\",\n            \"value\": \"9125588999\"\n        }\n    },\n    \"_message\": \"code validation failed\",\n    \"name\": \"ValidationError\",\n    \"message\": \"code validation failed: mobile: Please fill a valid phone number\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Signup with phone number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Authia User\",\n    \"password\" : \"123456789\",    \n    \"privateKey\": \"10306\",\n    \"publicKey\": \"7UnqgggikrGonohjwPKcowu1ngSmj1juYwiOU7I2OLLdphdKrt\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/phone/signup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"phone",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Valid keys",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Authia User\",\n    \"password\" : \"123456789\",    \n    \"privateKey\": \"10306\",\n    \"publicKey\": \"7UnqgggikrGonohjwPKcowu1ngSmj1juYwiOU7I2OLLdphdKrt\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/phone/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phone",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:01:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Invalid keys",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Authia User\",\n    \"password\" : \"123456789\",    \n    \"privateKey\": \"1006\",\n    \"publicKey\": \"7UnqgggikrGonohjwPKcowu1ngSmj1juYwiOU7I2OLLdphdKrt\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/phone/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phone",
+								"signup"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:03:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "User recovery with phone number",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\" : \"12345678912\",\n    \"privateKey\": \"7184\",\n    \"publicKey\": \"dvPaBbrM5Sk0hiL1GQta2FaRnOv9xCH1L1sGkfqHBh21a9P2nH\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/phone/recovery",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"phone",
+						"recovery"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Password of user is changed by user recovery",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"12345678912\",\n    \"privateKey\": \"71844\",\n    \"publicKey\": \"dvPaBbrM5Sk0hiL1GQta2FaRnOv9xCH1L1sGkfqHBh21a9P2nH\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/phone/recovery",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phone",
+								"recovery"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 19:02:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Invalid keys",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"12345678912\",\n    \"privateKey\": \"7184\",\n    \"publicKey\": \"dvPaBbrM5Sk0hiL1GQta2FaRnOv9xCH1L1sGkfqHBh21a9P2nH\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/phone/recovery",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phone",
+								"recovery"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 19:02:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "User recovery with email",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\" : \"123456789123\",\n    \"privateKey\": \"96077\",\n    \"publicKey\": \"7h8zQSR0YQvzqBEHQQUpoNtqrHCwiXfajDQY9I9qS4p3teqhjS\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/email/recovery",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"email",
+						"recovery"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Valid keys",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"123456789123\",\n    \"privateKey\": \"96077\",\n    \"publicKey\": \"7h8zQSR0YQvzqBEHQQUpoNtqrHCwiXfajDQY9I9qS4p3teqhjS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/email/recovery",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"email",
+								"recovery"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 21:04:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Invalid keys",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"123456789123\",\n    \"privateKey\": \"9077\",\n    \"publicKey\": \"7h8zQSR0YQvzqBEHQQUpoNtqrHCwiXfajDQY9I9qS4p3teqhjS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/email/recovery",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"email",
+								"recovery"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 21:04:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Signup with email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Authia User2\",\n    \"password\" : \"123456789\",\n    \"privateKey\": \"93106\",\n    \"publicKey\": \"V0CxPON5Vd3E1kkQFXiGWN9i1bnTsCN3W1IgwTdNLZhbiowO86\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/email/signup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"email",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Valid keys",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Authia User2\",\n    \"password\" : \"123456789\",\n    \"privateKey\": \"93106\",\n    \"publicKey\": \"V0CxPON5Vd3E1kkQFXiGWN9i1bnTsCN3W1IgwTdNLZhbiowO86\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/email/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"email",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:06:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Invalid keys",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Authia User2\",\n    \"password\" : \"123456789\",\n    \"privateKey\": \"9106\",\n    \"publicKey\": \"V0CxPON5Vd3E1kkQFXiGWN9i1bnTsCN3W1IgwTdNLZhbiowO86\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/email/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"email",
+								"signup"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:07:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Signin with email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\" : \"123456789\",\n    \"email\" : \"mivode6226@gruppies.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/email/signin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"email",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid email or password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"123456789\",\n    \"email\" : \"mivode6226@gruppies.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/email/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"email",
+								"signin"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:12:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Valid user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"123456789\",\n    \"email\" : \"example@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/email/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"email",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-GwXf/ZgQqRurzL/9OHEXaUdleF8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:13:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"xAuth\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjM5YjYyM2Q4NWU2ODM4ZjY2YTIxZGUyIiwiaWF0IjoxNjcxMTI3OTgzfQ.wa1ZvQkiJMWTRQz7jBr1kr3RUnjv-OkAIrAF6pOtvDM\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Signin with phone number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\" : \"123456789123\",\n    \"mobile\" : \"09125588999\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/phone/signin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"phone",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid phone number or password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"123456789\",\n    \"mobile\" : \"09380610009\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/phone/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phone",
+								"signin"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:16:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Valid user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"123456789\",\n    \"mobile\" : \"09155896347\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/phone/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phone",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-B4W3nbKidYB7a6rX1MuxKfjnAoA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:16:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"xAuth\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjM5YjYxMDA0ZjFiMWE4NzIyN2NjMjkzIiwiaWF0IjoxNjcxMTI4MjA5fQ.ycRwkOWHNwGI-50Dz-QcW-FiLHzJpOUdsp0d_YlIeZc\"\n}"
+				},
+				{
+					"name": "After phone number is changed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"123456789\",\n    \"mobile\" : \"09125588999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/phone/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phone",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-PZk0BfNwwVdIGOVZ7zMI2aIPDP8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:31:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"xAuth\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjM5YjYyM2Q4NWU2ODM4ZjY2YTIxZGUyIiwiaWF0IjoxNjcxMTI5MDYyfQ.lH8ghEp9NxKIFxPDvUiD4JqcGod8u2F3Por0nUFU6Ss\"\n}"
+				},
+				{
+					"name": "After password recovery with phone number",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"12345678912\",\n    \"mobile\" : \"09125588999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/phone/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phone",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-OHzOgIWQZpD2vQPhO1P2Sctl3H8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 19:03:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"xAuth\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjM5YjYyM2Q4NWU2ODM4ZjY2YTIxZGUyIiwiaWF0IjoxNjcxMTMxMDIxfQ.BN8FnYswBh7ToZGvQkp-K8Vq6flxnd4NCBniyBqwxhI\"\n}"
+				},
+				{
+					"name": "After password is changed by user recovery with email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"123456789123\",\n    \"mobile\" : \"09125588999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/phone/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"phone",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-c81QVSLsXq3+lZzlC816cH9A3T4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 19:07:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"xAuth\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjM5YjYyM2Q4NWU2ODM4ZjY2YTIxZGUyIiwiaWF0IjoxNjcxMTMxMjM1fQ.gXQFW0liI46TKKNJd6eQT9bTVDpUnPfMC2ddx8f6LSQ\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get user sessions list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "xAuth",
+						"value": "{{code}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/session",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"session"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Session list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/session",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"session"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"75-s0nlfGcSHKNV1t5d+/M4VDHrvWM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:20:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"639b63af85e6838f66a21de9\",\n        \"platform\": \"unknown\",\n        \"os\": \"unknown\",\n        \"ip\": \"::1\",\n        \"date\": \"2022-12-15T18:13:03.090Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Remove session",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "xAuth",
+						"value": "{{code}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/session/639b67e685e6838f66a21e08",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"session",
+						"639b67e685e6838f66a21e08"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid session _id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/session/639b63af85e6838f66a21de9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"session",
+								"639b63af85e6838f66a21de9"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:43:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Valid session _id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/session/639b67e685e6838f66a21e08",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"session",
+								"639b67e685e6838f66a21e08"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:44:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Edit name of user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "xAuth",
+						"value": "{{code}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Messi\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/name",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"name"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit user name",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Messi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/name",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"name"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:42:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Edit email",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "xAuth",
+						"value": "{{code}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"privateKey\": \"09752\",\n    \"publicKey\": \"bFa6TywbJHliYd3DNZcb7mrSy4i1wjbqXQ54mXPUd293h2u7Yl\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/email",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"email"
+					]
+				},
+				"description": "After email is changed, user is signed out."
+			},
+			"response": [
+				{
+					"name": "Valid keys",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"privateKey\": \"09752\",\n    \"publicKey\": \"bFa6TywbJHliYd3DNZcb7mrSy4i1wjbqXQ54mXPUd293h2u7Yl\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/email",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"email"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:47:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Invalid keys",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"privateKey\": \"0972\",\n    \"publicKey\": \"bFa6TywbJHliYd3DNZcb7mrSy4i1wjbqXQ54mXPUd293h2u7Yl\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/email",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"email"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:47:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Edit user phone number",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "xAuth",
+						"value": "{{code}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"privateKey\": \"77655\",\n    \"publicKey\": \"tC2qxDv8jejMNGKTd7AoRtxwRLn1ZQ3ZMjq7HxTRual2fLhfR8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/phone",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"phone"
+					]
+				},
+				"description": "After phone number is changed, user is signed out."
+			},
+			"response": [
+				{
+					"name": "Valid keys",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"privateKey\": \"77655\",\n    \"publicKey\": \"tC2qxDv8jejMNGKTd7AoRtxwRLn1ZQ3ZMjq7HxTRual2fLhfR8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/phone",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"phone"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:27:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Edit password of user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "xAuth",
+						"value": "{{code}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\" : \"123456798\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/password",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"password"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Password is changed",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"123456798\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"password"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:50:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get user info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "xAuth",
+						"value": "{{code}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User info",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-XhQl7gUD+FNQDZZK4txOsNQSr8U\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:22:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Authia User2\",\n    \"email\": \"example@gmail.com\"\n}"
+				},
+				{
+					"name": "Phone number is added",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-c99BtajShrRxPvvlFrxzOF1mrxQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:32:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Authia User2\",\n    \"email\": \"example@gmail.com\",\n    \"mobile\": \"09125588999\"\n}"
+				},
+				{
+					"name": "After name of user is changed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"43-mxVdEMq5VFbZj0nzGOtcTLwZdhw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:42:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Messi\",\n    \"email\": \"example@gmail.com\",\n    \"mobile\": \"09125588999\"\n}"
+				},
+				{
+					"name": "After email is changed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "xAuth",
+								"value": "{{code}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"49-nOwstu+2V7kLk7p2EnrBXubK4yg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 18:49:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Messi\",\n    \"email\": \"mivode6226@gruppies.com\",\n    \"mobile\": \"09125588999\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "code",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjM5YjYyM2Q4NWU2ODM4ZjY2YTIxZGUyIiwiaWF0IjoxNjcxMTMwMTMwfQ.XYTUYIXUHMUGndUQQqU2d6tBK9gM7sSN1joOU5TP1j4"
+		},
+		{
+			"key": "url",
+			"value": "http://localhost:5000"
+		}
+	]
+}
